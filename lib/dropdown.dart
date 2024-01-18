@@ -130,7 +130,9 @@ class Dropdown extends StatefulWidget {
       this.dismissWhenTapAddItem = true,
       this.onTapAddItem,
       this.addItemWidget,
-      this.noDataWidget})
+      this.noDataWidget,
+      required this.textStyle  
+      })
       : selectedId = null,
         onSingleItemListener = null,
         _isMultiple = true,
