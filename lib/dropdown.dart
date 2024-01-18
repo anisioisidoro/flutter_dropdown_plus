@@ -53,7 +53,7 @@ class Dropdown extends StatefulWidget {
   final Function(List<DropdownItem> selectedItemList)? onMultipleItemListener;
   final Function(String searchValue)? onTapAddItem;
   final bool _isMultiple;
-
+  final TextStyle textStyle;
   /// constructor for single selection dropdown
   const Dropdown.singleSelection(
       {Key? key,
@@ -82,7 +82,9 @@ class Dropdown extends StatefulWidget {
       this.dismissWhenTapAddItem = true,
       this.onTapAddItem,
       this.addItemWidget,
-      this.noDataWidget})
+      this.noDataWidget,
+      this.textStyle 
+      })
       : selectedIds = null,
         prefixSeparator = _has,
         suffixSeparator = _comma,
@@ -165,7 +167,7 @@ class _DropdownState extends State<Dropdown> {
       controller: _conSelectedValue,
       readOnly: true,
       textAlign: widget.textAlign,
-      style: TextStyle(fontFamily: widget.fontFamily),
+      style: widget.textStyle,
       enabled: widget.enabled,
       decoration: widget.decoration ??
           InputDecoration(
